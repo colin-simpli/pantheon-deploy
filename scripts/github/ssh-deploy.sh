@@ -40,7 +40,7 @@ fi
 
 terminus connection:set $PANTHEONSITENAME.$PANTHEONENV sftp
 # deploy all files in root
-rsync -rLvzc --size-only --ipv4 --progress -e 'ssh -p 2222' . --temp-dir=~/tmp/ $PANTHEONENV.$PANTHEONSITEUUID@appserver.$PANTHEONENV.$PANTHEONSITEUUID.drush.in:code/ --exclude='*.git*' --exclude node_modules/ --exclude gulp/ --exclude source/ --exclude .github/ --exclude .vscode/
+rsync -rLvzc --delete --size-only --ipv4 --progress -e 'ssh -p 2222' . --temp-dir=~/tmp/ $PANTHEONENV.$PANTHEONSITEUUID@appserver.$PANTHEONENV.$PANTHEONSITEUUID.drush.in:code/ --exclude='*.git*' --exclude node_modules/ --exclude gulp/ --exclude source/ --exclude .github/ --exclude .vscode/
 
 #deploy pantheon yml file
 #rsync -rLvzc --size-only --ipv4 --progress -e 'ssh -p 2222' ./pantheon.yml --temp-dir=~/tmp/ $PANTHEONENV.$PANTHEONSITEUUID@appserver.$PANTHEONENV.$PANTHEONSITEUUID.drush.in:code/ --exclude='*.git*' --exclude node_modules/ --exclude gulp/ --exclude source/ --exclude .github/ --exclude .vscode/
