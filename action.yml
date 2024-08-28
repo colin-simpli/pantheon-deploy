@@ -23,6 +23,8 @@ runs:
         export GH_COMMITID=${COMMITID}
         export GH_COMMITMSG=${COMMITMSG}
         ${{ github.action_path }}/scripts/github/setup-terminus.sh
+        ${{ github.action_path }}/scripts/github/setup-terminus-plugins.sh
+        ${{ github.action_path }}/scripts/github/ssh-deploy.sh
         printf "[\e[0;34mNOTICE\e[0m] Pantheon Deploy script COMPLETE!!!.\n"
       working-directory: .
       shell: bash
