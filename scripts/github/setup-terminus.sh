@@ -14,4 +14,4 @@ chmod +x terminus
 sudo ln -s ~/terminus/terminus /usr/local/bin/terminus
 
 printf "[\e[0;34mNOTICE\e[0m] Terminus Setup end!!.\n"
-terminus auth:login --email="crcrampton@gmail.com" --machine-token="$PANTHEON_TERMINUS_MACHINE_TOKEN" -vvv
+terminus auth:login
